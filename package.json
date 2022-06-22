@@ -1,0 +1,29 @@
+{
+  "name": "playwrighttesting",
+  "version": "1.0.0",
+  "description": "Playwright Testing Around",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adg08101/playwrightTesting.git"
+  },
+  "keywords": [
+    "Just",
+    "another",
+    "testing",
+    "test"
+  ],
+  "author": "Ahmed Davila Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adg08101/playwrightTesting/issues"
+  },
+  "homepage": "https://github.com/adg08101/playwrightTesting#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2",
+    "playwright": "^1.22.2"
+  }
+}
