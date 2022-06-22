@@ -1,0 +1,12 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="25.91">
+<testsuite name="src\specs\example.spec.ts" timestamp="1655935405168" hostname="" tests="2" failures="0" skipped="0" time="24.493" errors="0">
+<testcase name="Navigate to Google" classname="src\specs\example.spec.ts:5:1 › Navigate to Google" time="13.998">
+</testcase>
+<testcase name="Search for Playwright" classname="src\specs\example.spec.ts:11:1 › Search for Playwright" time="10.495">
+<system-out>
+Playwright: Fast and reliable end-to-end testing for modern ...
+
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
