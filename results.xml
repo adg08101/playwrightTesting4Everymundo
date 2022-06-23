@@ -1,8 +1,8 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="25.91">
-<testsuite name="src\specs\example.spec.ts" timestamp="1655935405168" hostname="" tests="2" failures="0" skipped="0" time="24.493" errors="0">
-<testcase name="Navigate to Google" classname="src\specs\example.spec.ts:5:1 › Navigate to Google" time="13.998">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="18.533">
+<testsuite name="src\specs\example.spec.ts" timestamp="1655992129817" hostname="" tests="2" failures="0" skipped="0" time="26.003" errors="0">
+<testcase name="feature examples Navigate to Google" classname="[firefox] › src\specs\example.spec.ts:10:3 › feature examples › Navigate to Google" time="9.205">
 </testcase>
-<testcase name="Search for Playwright" classname="src\specs\example.spec.ts:11:1 › Search for Playwright" time="10.495">
+<testcase name="feature examples Search for Playwright" classname="[firefox] › src\specs\example.spec.ts:15:3 › feature examples › Search for Playwright" time="16.798">
 <system-out>
 Playwright: Fast and reliable end-to-end testing for modern ...
 

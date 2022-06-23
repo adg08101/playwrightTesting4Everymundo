@@ -2,6 +2,7 @@ import type { Page } from  '@playwright/test';
 
 export class ExampleClass {
     readonly page: Page
+    firstResultLocator = '//h3[contains(text(),"Playwright:")]'
 
     constructor(page:Page) {
         this.page=page
@@ -16,6 +17,10 @@ export class ExampleClass {
     }
 
     async searchResult() {
-       return this.page.innerText('//h3[contains(text(),"Playwright:")]')
+       return this.page.innerText(this.firstResultLocator)
+    }
+
+    async goToFirstResult() {
+       this.page.click(this.firstResultLocator)
     }
 }

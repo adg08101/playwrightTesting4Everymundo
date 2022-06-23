@@ -1,6 +1,7 @@
-import { PlaywrightTestConfig } from '@playwright/test';
+import { devices, PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
+  fullyParallel: true,
   use: {
       baseURL: 'https://google.com/',
     headless: false,
@@ -10,6 +11,16 @@ const config: PlaywrightTestConfig = {
     browserName: 'chromium',
   },
   reporter: [ ['junit', { outputFile: 'results.xml' }] ],
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+  ]
 };
 
 export default config;
