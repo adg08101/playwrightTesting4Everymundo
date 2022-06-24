@@ -1,7 +1,7 @@
 {
-  "name": "playwrighttesting",
+  "name": "everymundoplaywrighttesting",
   "version": "1.0.0",
-  "description": "Playwright Testing Around",
+  "description": "Everymundo Module Playwright Testing Around",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,8 @@
     "Just",
     "another",
     "testing",
-    "test"
+    "test",
+    "everymundo"
   ],
   "author": "Ahmed Davila Guerrero",
   "license": "ISC",

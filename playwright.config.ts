@@ -3,7 +3,7 @@ import { devices, PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   fullyParallel: true,
   use: {
-      baseURL: 'https://google.com/',
+      baseURL: 'https://tp-dev.everymundo.net/en-pt/flights-from-lisbon-to-miami',
     headless: false,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import config from '../../playwright.config';
-import { ExampleClass } from '../pages/example.page';
+import { ExampleClass } from '../pages/module.page';
 
 test.describe('feature examples', () => {
   test.beforeEach(async ({ page }) => {
