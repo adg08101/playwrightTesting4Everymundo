@@ -61,4 +61,47 @@ test.describe('Everymundo Module Tests', () => {
       console.log('Please check for errors on test excecution ', error)
     }
   })*/
+
+  /*test('Check for the skeleton screen', async () => {
+    // No idea
+    expect(everymundoModule.page.skeleton).toEqual(true)
+  })*/
+
+  /*test('Look at the monthly carousel section of the module', async () => {
+    const currentDate = new Date()
+    const currentMonthNameShort = currentDate.toLocaleString("en-US", { month: "short" });
+    let year = currentDate.toLocaleString("en-US", { year: 'numeric' });
+
+    let currentMonth = await everymundoModule.getCurrentMonthCard()
+
+    expect(await currentMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(currentMonthNameShort)
+    expect(await currentMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+
+    let nextMonthDate = new Date()
+    nextMonthDate.setMonth(currentDate.getMonth() + 1)
+
+    if (nextMonthDate.getFullYear() != currentDate.getFullYear())
+      year = nextMonthDate.getFullYear().toString()
+
+    let nextMonth = await everymundoModule.getNextMonthCard()
+
+    let nextMonthNameShort = nextMonthDate.toLocaleString("en-US", { month: "short" });
+
+    expect(await nextMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(nextMonthNameShort)
+    expect(await nextMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+
+    nextMonthDate.setMonth(nextMonthDate.getMonth() + 1)
+    
+    if (nextMonthDate.getFullYear() != currentDate.getFullYear())
+      year = nextMonthDate.getFullYear().toString()
+    
+    nextMonth = await everymundoModule.getNextTwoMonthCard()
+
+    nextMonthNameShort = nextMonthDate.toLocaleString("en-US", { month: "short" });
+
+    nextMonth = await everymundoModule.getNextTwoMonthCard()
+
+    expect(await nextMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(nextMonthNameShort)
+    expect(await nextMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+  })*/
 })

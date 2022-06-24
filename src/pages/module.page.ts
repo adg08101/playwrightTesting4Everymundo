@@ -11,6 +11,10 @@ export class EverymundoModule {
     flightTypeResultSelector = "//span[contains(text(), 'Flight Type')]"
     fareTotalPrice = "//span[contains(@class, 'fare-total-price')]"
     farePriceLocator = "//span[contains(@class, 'horizontal-fare-price')]"
+    skeletonSelector = "//*[contains(@class, 'skeleton')]"
+    currentMontCardSelector = "//div[contains(@class, 'rec-carousel-item-0')]"
+    nextMontCardSelector = "//div[contains(@class, 'rec-carousel-item-1')]"
+    nextTwoMontCardSelector = "//div[contains(@class, 'rec-carousel-item-2')]"
     airportSelectors = {
       FRA: '[data-att=FRA]'
     }
@@ -52,6 +56,18 @@ export class EverymundoModule {
            console.log('Select proper Airport Id')
            break
        }
+    }
+
+    async getCurrentMonthCard() {
+      return this.page.locator(this.currentMontCardSelector)
+    }
+
+    async getNextMonthCard() {
+      return this.page.locator(this.nextMontCardSelector).first()
+    }
+
+    async getNextTwoMonthCard() {
+      return this.page.locator(this.nextTwoMontCardSelector)
     }
 
     /*async pressEnter() {
