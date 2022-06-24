@@ -1,12 +1,6 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="18.533">
-<testsuite name="src\specs\example.spec.ts" timestamp="1655992129817" hostname="" tests="2" failures="0" skipped="0" time="26.003" errors="0">
-<testcase name="feature examples Navigate to Google" classname="[firefox] › src\specs\example.spec.ts:10:3 › feature examples › Navigate to Google" time="9.205">
-</testcase>
-<testcase name="feature examples Search for Playwright" classname="[firefox] › src\specs\example.spec.ts:15:3 › feature examples › Search for Playwright" time="16.798">
-<system-out>
-Playwright: Fast and reliable end-to-end testing for modern ...
-
-</system-out>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="21.095">
+<testsuite name="src\specs\everymundo.spec.ts" timestamp="1656089556521" hostname="" tests="1" failures="0" skipped="0" time="19.745" errors="0">
+<testcase name="Everymundo Module Tests Select a valid airport code from the From dropdown" classname="[firefox] › src\specs\everymundo.spec.ts:45:3 › Everymundo Module Tests › Select a valid airport code from the From dropdown" time="19.745">
 </testcase>
 </testsuite>
 </testsuites>

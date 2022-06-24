@@ -5,22 +5,12 @@ const config: PlaywrightTestConfig = {
   use: {
       baseURL: 'https://tp-dev.everymundo.net/en-pt/flights-from-lisbon-to-miami',
     headless: false,
-    viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
     video: 'on-first-retry',
     browserName: 'chromium',
+    viewport: { width: 1920, height: 1080 },
   },
-  reporter: [ ['junit', { outputFile: 'results.xml' }] ],
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-  ]
+  timeout: 60000,
 };
 
 export default config;
