@@ -15,8 +15,13 @@ export class EverymundoModule {
     currentMontCardSelector = "//div[contains(@class, 'rec-carousel-item-0')]"
     nextMontCardSelector = "//div[contains(@class, 'rec-carousel-item-1')]"
     nextTwoMontCardSelector = "//div[contains(@class, 'rec-carousel-item-2')]"
+    nextThreeMontCardSelector = "//div[contains(@class, 'rec-carousel-item-3')]"
+    nextFourMontCardSelector = "//div[contains(@class, 'rec-carousel-item-4')]"
+    nextFiveMontCardSelector = "//div[contains(@class, 'rec-carousel-item-5')]"
+    monthlyScrollRightSelector = "//button[@aria-label='Next months']"
     airportSelectors = {
-      FRA: '[data-att=FRA]'
+      FRA: '[data-att=FRA]',
+      DEL: '[data-att=DEL]',
     }
 
     constructor(page:Page) {
@@ -69,6 +74,20 @@ export class EverymundoModule {
     async getNextTwoMonthCard() {
       return this.page.locator(this.nextTwoMontCardSelector)
     }
+
+    async getMonthCard(month:string) {
+      switch (month) {
+        case '03':
+          return this.page.locator(this.nextThreeMontCardSelector)
+         case '04':
+          return this.page.locator(this.nextFourMontCardSelector)
+         case '05':
+          return this.page.locator(this.nextFiveMontCardSelector)
+        default:
+          console.log('Select proper Month')
+          break
+      }
+   }
 
     /*async pressEnter() {
        await this.page.keyboard.press('Enter')

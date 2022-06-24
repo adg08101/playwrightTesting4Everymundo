@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
     browserName: 'chromium',
     viewport: { width: 1920, height: 1080 },
   },
-  timeout: 60000,
+  timeout: 120000,
 };
 
 export default config;

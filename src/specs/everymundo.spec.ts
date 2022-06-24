@@ -50,14 +50,13 @@ test.describe('Everymundo Module Tests', () => {
           await everymundoModule.clickFromLocator(everymundoModule.flightTypeResultSelector).then(async () => {
             let fareTotalPrice = await everymundoModule.page.locator(everymundoModule.fareTotalPrice).first().innerText()
             fareTotalPrice = fareTotalPrice.replace(/,/gi, ".")
-            let farePrice = parseFloat(await everymundoModule.page.locator(everymundoModule.farePriceLocator).innerText()).toString()
+            let farePrice = parseFloat(await everymundoModule.page.locator(everymundoModule.farePriceLocator).first().innerText()).toString()
             fareTotalPrice = parseFloat(fareTotalPrice).toString()
-            console.log(farePrice, fareTotalPrice)
             expect(fareTotalPrice).toContain(farePrice)
           })
         })
       })
-    }), (error) => {
+    }), (error: any) => {
       console.log('Please check for errors on test excecution ', error)
     }
   })*/
@@ -103,5 +102,121 @@ test.describe('Everymundo Module Tests', () => {
 
     expect(await nextMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(nextMonthNameShort)
     expect(await nextMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+  })*/
+
+  /*test('Look within one of the monthly cards', async () => {
+    const currentMonth = await everymundoModule.getCurrentMonthCard()
+
+    expect(await currentMonth.locator("//span[contains(@class, 'month-fare')]")).toBeVisible()
+    expect(await currentMonth.locator("//span[contains(@class, 'year-fare')]")).toBeVisible()
+    expect(await currentMonth.locator("//span[contains(@class, 'promo-fare')]")).toBeVisible()
+    expect(await currentMonth.locator("//span[contains(@class, 'fare-total-price')]")).toBeVisible()
+    expect(await currentMonth.locator("//span[contains(@class, 'fare-total-price')]").innerText()).toContainText
+    expect(await currentMonth.locator("//span[contains(@class, 'fare-price-disclaimer-indicator')]").innerText()).toEqual('*')
+  })*/
+
+  /*test('Click on a monthly carousel card', async () => {
+    const twoMonthsCard = await everymundoModule.getNextTwoMonthCard()
+    await twoMonthsCard.click()
+
+    let fareTotalPrice = await everymundoModule.page.locator(everymundoModule.fareTotalPrice).first().innerText()
+    fareTotalPrice = fareTotalPrice.replace(/,/gi, ".")
+    let farePrice = parseFloat(await everymundoModule.page.locator(everymundoModule.farePriceLocator).first().innerText()).toString()
+    fareTotalPrice = parseFloat(fareTotalPrice).toString()
+    expect(fareTotalPrice).toContain(farePrice)
+  })*/
+
+  /*test('Click on the arrow to the right of the monthly carousel', async () => {
+    const twoMonthsCard = await everymundoModule.page.locator(everymundoModule.monthlyScrollRightSelector)
+    await twoMonthsCard.click().then(async () => {
+      let currentDate = new Date()
+      currentDate.setMonth(currentDate.getMonth() + 3)
+
+      let currentMonthNameShort = currentDate.toLocaleString("en-US", { month: "short" });
+      let year = currentDate.toLocaleString("en-US", { year: 'numeric' });
+
+      let currentMonth = await everymundoModule.getMonthCard('03')
+
+      expect(await currentMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(currentMonthNameShort)
+      expect(await currentMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+
+      currentDate.setMonth(currentDate.getMonth() + 1)
+
+      if (currentDate.getFullYear().toString() != year)
+        year = currentDate.getFullYear().toString()
+
+      currentMonth = await everymundoModule.getMonthCard('04')
+
+      currentMonthNameShort = currentDate.toLocaleString("en-US", { month: "short" });
+
+      expect(await currentMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(currentMonthNameShort)
+      expect(await currentMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+
+      currentDate.setMonth(currentDate.getMonth() + 1)
+
+      if (currentDate.getFullYear().toString() != year)
+        year = currentDate.getFullYear().toString()
+
+      currentMonth = await everymundoModule.getMonthCard('05')
+
+      currentMonthNameShort = currentDate.toLocaleString("en-US", { month: "short" });
+
+      expect(await currentMonth.locator("//span[contains(@class, 'month-fare')]").innerText()).toEqual(currentMonthNameShort)
+      expect(await currentMonth.locator("//span[contains(@class, 'year-fare')]").innerText()).toEqual(year)
+
+      const currentCard = await everymundoModule.getMonthCard('03')
+      await currentCard.click()
+
+      let fareTotalPrice = await everymundoModule.page.locator(everymundoModule.fareTotalPrice).first().innerText()
+      fareTotalPrice = fareTotalPrice.replace(/,/gi, ".")
+      let farePrice = parseFloat(await everymundoModule.page.locator(everymundoModule.farePriceLocator).first().innerText()).toString()
+      fareTotalPrice = parseFloat(fareTotalPrice).toString()
+      expect(fareTotalPrice).toContain(farePrice)
+    })
+  })*/
+
+  /*test('Look for a monthly carousel with no data available', async () => {
+    const airport = 'DEL'
+    const message = 'Try updating your route (origin and/or destination) or interact with individual dates below in order to find offers.'
+    await everymundoModule.clickFromLocator(everymundoModule.originClearSelector).then(async () => {
+      await everymundoModule.typeSearchFromLocator(everymundoModule.originSelector, airport).then(async () => {
+        await everymundoModule.clickAirportLocator(airport).then(async () => {
+          expect(everymundoModule.page.locator("//div[text(), " + message + "]")).toBeVisible
+          expect(everymundoModule.page.locator("//button[contains(@class, 'link-check-availability')]")).toBeVisible
+        })
+      })
+    }), (error: any) => {
+      console.log('Please check for errors on test excecution ', error)
+    }
+  })*/
+
+  /*test('Price data throughout the month', async () => {
+    const date = new Date()
+    const days = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+
+    const monthDays = await everymundoModule.page.locator("//span[@data-att='bar-day-number']")
+    let count = await monthDays.count()
+
+    var daysNames = [
+      'Su', 
+      'Mo', 
+      'Tu', 
+      'We', 
+      'Th', 
+      'Fr', 
+      'Sa'
+    ]
+
+    expect(days).toEqual(count)
+
+    const monthDaysNames = await everymundoModule.page.locator("//p[@data-att='bar-day-week']")
+    count = await monthDaysNames.count()
+
+    expect(days).toEqual(count)
+
+    for (let i = 0;i < count;i++) {
+      expect(await monthDays.nth(i).textContent()).toContain((i + 1).toString());
+      expect(await monthDaysNames.nth(i).textContent()).toEqual(daysNames[new Date(date.getFullYear(), date.getMonth(), i + 1).getDay()]);
+    }
   })*/
 })
