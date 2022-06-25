@@ -8,6 +8,7 @@ export class EverymundoModule {
     fromAirportCloseLocator = "//i[text()='close']"
     originClearSelector = "//div[@data-att='origin-selector']/descendant::i[text()='close']"
     originSelector = "css=[placeholder='Input Origin']"
+    destinationSelector = "css=[placeholder='Input destination']"
     flightTypeResultSelector = "//span[contains(text(), 'Flight Type')]"
     fareTotalPrice = "//span[contains(@class, 'fare-total-price')]"
     farePriceLocator = "//span[contains(@class, 'horizontal-fare-price')]"
