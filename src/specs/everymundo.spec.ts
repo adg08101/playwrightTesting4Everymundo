@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, Locator } from '@playwright/test'
 import config from '../../playwright.config'
 import { EverymundoModule } from '../pages/module.page'
 
@@ -192,7 +192,7 @@ test.describe('Everymundo Module Tests', () => {
 
   /*test('Price data throughout the month', async () => {
     const date = new Date()
-    const days = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+    const days = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
 
     const monthDays = await everymundoModule.page.locator("//span[@data-att='bar-day-number']")
     let count = await monthDays.count()
@@ -216,7 +216,69 @@ test.describe('Everymundo Module Tests', () => {
 
     for (let i = 0;i < count;i++) {
       expect(await monthDays.nth(i).textContent()).toContain((i + 1).toString());
-      expect(await monthDaysNames.nth(i).textContent()).toEqual(daysNames[new Date(date.getFullYear(), date.getMonth(), i + 1).getDay()]);
+      expect(await monthDaysNames.nth(i).textContent()).toEqual(daysNames[new Date(date.getFullYear(), date.getMonth(), i + 1).getDay()])
+    }
+  })*/
+
+  /*test('Look for the lowest fare on the daily histogram', async ({ page }) => {
+    const fareBars = await everymundoModule.page.locator("//button[@data-att='bar-fare']")
+    let count = await fareBars.count()
+
+    await page.mouse.wheel(0, 500)
+
+    let fareBar: Locator, height: number, box: any
+
+    if (count > 0) {
+      for (let i = 0;i < count;i++) {
+        box = await fareBars.nth(i).boundingBox()
+        if (i == 0) {
+          height = box.height
+          fareBar = fareBars.nth(i)
+        } else {
+          if (box.height < height) {
+            height = box.height
+            fareBar = fareBars.nth(i)
+          }
+        }
+      }
+      const fareBarClass = '//*[@class=\'' + await fareBar.getAttribute('class') + '\']'
+      expect(await everymundoModule.page.locator(fareBarClass).count()).toEqual(1)
+    } else {
+      console.log('Please check for errors on test excecution no data')
+    }
+  })*/
+
+  /*test('Hover over one of the daily bar graphs', async ({ page }) => {
+    const fareBars = await everymundoModule.page.locator("//button[@data-att='bar-fare']")
+    let count = await fareBars.count()
+
+    await page.mouse.wheel(0, 500)
+
+    let fareBar: Locator, height: number, box: any
+
+    if (count > 0) {
+      for (let i = 0;i < count;i++) {
+        box = await fareBars.nth(i).boundingBox()
+        if (i == 0) {
+          height = box.height
+          fareBar = fareBars.nth(i)
+        } else {
+          if (box.height < height) {
+            height = box.height
+            fareBar = fareBars.nth(i)
+          }
+        }
+      }
+
+      await page.mouse.move(box.x + (box.width / 2), box.y + (box.height / 2)).then(async () => {
+        const attibute = await everymundoModule.page.locator("//button[@aria-describedby]").getAttribute('aria-describedby')
+        const hover = await everymundoModule.page.locator("//div[@id=\'" + attibute + "\']")
+        expect(await hover.innerText()).toContainText
+      }, (error) => {
+        console.log('Please check for errors on test excecution ' + error)
+      })
+    } else {
+      console.log('Please check for errors on test excecution no data')
     }
   })*/
 })
