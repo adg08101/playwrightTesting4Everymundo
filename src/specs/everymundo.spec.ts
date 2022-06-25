@@ -401,10 +401,10 @@ test.describe('Everymundo Module Tests', () => {
   test('Click the Book now button inside the pop up', async ({ page }) => {
     await page.mouse.wheel(0, 500)
 
-    // TODO: Fix this Search for all occurencesa and refactor
+    await everymundoModule.page.locator("//div[@id='everymundo-histogram-bars-container']")
+    await everymundoModule.page.locator("//button[@data-att='bar-fare']")
     await everymundoModule.page.locator("//div[@id='everymundo-histogram-bars-container']")
     const fareBars = await everymundoModule.page.locator("//button[@data-att='bar-fare']")
-    await everymundoModule.page.locator("//div[@id='everymundo-histogram-bars-container']")
 
     let count = await fareBars.count() 
 

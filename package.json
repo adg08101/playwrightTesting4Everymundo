@@ -1,14 +1,14 @@
 {
   "name": "everymundoplaywrighttesting",
   "version": "1.0.0",
-  "description": "Everymundo Module Playwright Testing Around",
+  "description": "Everymundo Module Playwright Testing",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adg08101/playwrightTesting.git"
+    "url": "git+https://github.com/adg08101/playwrightTesting4Everymundo.git"
   },
   "keywords": [
     "Just",
@@ -20,9 +20,9 @@
   "author": "Ahmed Davila Guerrero",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adg08101/playwrightTesting/issues"
+    "url": "https://github.com/adg08101/playwrightTesting4Everymundo/issues"
   },
-  "homepage": "https://github.com/adg08101/playwrightTesting#readme",
+  "homepage": "https://github.com/adg08101/playwrightTesting4Everymundo#readme",
   "devDependencies": {
     "@playwright/test": "^1.22.2",
     "playwright": "^1.22.2"

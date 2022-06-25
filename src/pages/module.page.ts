@@ -89,16 +89,4 @@ export class EverymundoModule {
           break
       }
    }
-
-    /*async pressEnter() {
-       await this.page.keyboard.press('Enter')
-    }
-
-    async searchResult() {
-       return this.page.innerText(this.firstResultLocator)
-    }
-
-    async goToFirstResult() {
-       this.page.click(this.firstResultLocator)
-    }*/
 }
